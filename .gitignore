@@ -1,0 +1,6 @@
+__pycache__/
+*.pt
+*.bin
+*.pkl
+/data/books/zombies
+/data/zombie_char/zombies
