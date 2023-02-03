@@ -1,0 +1,453 @@
+python train.py --dataset=books1 --n_layer=12 --n_head=16 --n_embd=1024 --compile=False --eval_iters=20 --block_size=128 --batch_size=12
+
+python train.py --dataset=books --n_layer=12 --n_head=12 --n_embd=512 --compile=False --eval_iters=20 --block_size=400 --batch_size=12 --out_dir=out-zombie-word --init_from=resume --log_interval=10
+
+
+In college I studied horticulture
+
+
+python train.py --dataset=fiction --n_layer=12 --n_head=16 --n_embd=512 --compile=False --eval_iters=20 --block_size=400 --batch_size=12 --out_dir=out-fiction-word --init_from=resume --log_interval=10
+
+python sample.py --out_dir=out-fiction-word --start="When they atacked whe where" --num_samples=5 --temperature=0.8
+
+
+
+
+
+python train.py --dataset=fiction --n_layer=12 --n_head=16 --n_embd=512 --compile=False --eval_iters=20 --block_size=400 --batch_size=12 --out_dir=out-fiction-word --init_from=resume --log_interval=10
+
+
+
+30.01 Test mit größerer block_size (400->550)
+python train.py --dataset=fiction --n_layer=10 --n_head=10 --n_embd=400 --compile=False --eval_iters=20 --block_size=550 --batch_size=12 --out_dir=out-fiction-word --log_interval=10
+python sample.py --out_dir=out-fiction-word --start="When they atacked we were" --num_samples=5 --temperature=0.8
+
+2000
+When they atacked whe where the zombies could, they would have to go. They could get them in the house if they could.
+
+"An asshole," he growled. "Please, tell me you're coming off."
+
+They watched for the zombies to follow the zombies. But it was a lot more they knew, they were far from the other side of the alley. They'd been dead, but they needed to do it. On the other hand, the zombie turned up.
+
+After a few minutes, they started to fight and kill. When they reached the other side, more and harder than a threat from the zombie and zombie, they could be. Before they could change their own mind, the zombies were the zombies now. They werewolves, but they were bitten at the infected, and tried to grab out her. There was no way to hell that, it was going to die.
+
+They ran, faster than ever. They would be, the zombie vampires were sick, there was no zombie's going to kill them. They'd have to kill them.
+
+They had to try to kill them, they werewolves. But, now, the zombies were moving. The zombies were their cars, their infected and zombies were dead. It was a thought of being infected, like they did.
+
+They crossed the cars, only the zombie cars were getting worse. And the zombies, they were a lot more undead. But their cars were still on it, of course. The zombies were ripped open, and they were crashing through the roof of the cars. The zombies were no longer holding the boys. They shot the first thing, and the zombies. They were pulling their back, but they felt different–but they were all getting down and would have to rest. They were so stupid that their virus could be on the street.
+
+It was they, to the left, and on the other side was an easy thing enough to kill. The zombies were on the back and Evan, then in a group of people, for more circumstances. They were just getting hot now, and they were in the grass, six feet in a few places. But they would never meet that, walking, getting off on his feet, and he now knew that one wasn't in sight. He might have known him. He had to kill people in a few days, and they just needed the cops...
+
+He ran around the cars, including the woods; and the
+---------------
+When they atacked whe where they could be; more than they looked. Everyone seemed at all. They had a good reason to do whatever else they might do, but they could not risk being a better vampire, but, and what could happen?"
+
+"It's the same, I am going to run a good one."
+
+"It's because it is not right now. It is."
+
+"It's a surprise. It's a great deal with it, to that."
+
+"It's okay. You're right,"
+
+"My men do seem to notice it, but it seems that it is a very good thing!"
+
+"I don't think it is. It's a very clear."
+
+"How does it have to be?"
+
+
+
+
+4000
+When they atacked whe where they wanted to be, I told them we were finally so close to each other and then called to help the soldiers.
+
+"I got the news, and the news had an errand on alert. We'll be out in the morning and then be out for you."
+
+The soldiers charged and made their way to the prison cells. When it finished, they marched off into the cells. In a few minutes I didn't want to take a call.
+
+"Where are we going?" I asked.
+
+"The guards are here. They have an awful day ahead. They're here tonight, and they're in town soon. We'll have to get there soon enough."
+
+I made the call to the guards, but they were put at ease by me. I felt the blood drain from me as I walked out. The guards, however, were already out of the cell, covered with the scratches. They were all gone. I had no time to react to the guards's presence, so I just kept quiet.
+
+"Sleve," I said as I followed them out. "No discussion for you."
+
+"They're coming in at a hospital. They don't want them telling you. It's a bad feeling."
+
+"Do you want them to take on some sort of hospital?"
+
+"Three of them are up to their family's family's side, they've been up to a child by some of them. The doctors are sent here somewhere nearby. We're losing the time of the panic."
+
+We heard the others arguing, so we stayed where we'd found her. Even though we weren't in her presence, we felt nothing.
+
+"Who's going to take blood from the mother?"
+
+"Who's going to kill him?"
+
+"The mother. I promised to, and he said you can stay in a house tonight as long as possible. The mother and I could have run through two hours in a while. And my family could do better than he could. You know, the mother and dad would be living outside the house, even if his family and dad were still alive, walking through a house and his family would take advantage. If that was where it would be safer to stay alive than I could ever have. But you were hoping he wouldn't harm you too."
+
+
+
+
+6000	loss: 3.1
+When they atacked whe where the zombies had just gone.
+
+They were still so close to the upper level of the garage, and as they went onward toward the garage, they found a large metal truck and ripped through the leaves.
+
+"Let's go," Williams said, rolling his eyes.
+
+The truck was empty now.
+
+"I'm dead."
+
+"Okay, I'll kill you," he said, grabbing a shovel from a tree.
+
+Sunnely, I made an effort to calm down.
+
+The rasping of the cinder-lined garage was quiet. The engine was noisy, and the fuel truck was running low and low.
+
+I reached out to the dashboard now. I was about to see the car gasping. There were no cars, but they weren't truckers.
+
+"I'm not going to do that!" I said.
+
+As we got closer, the truck slowly veered around.
+
+"Misty!" I said, peering around us.
+
+"We need to get this over with. Give it to the truck. We gotta get driving now."
+
+They could hear a engine running out. I knew it was more than a sign of the dead truck.
+
+"I'll be right back," I said. "Follow me."
+
+
+
+10000	loss: 2.9
+When they atacked whe where the zombies had just gone.
+
+"I think so," I said, trying to grip the urge to struggle. "It's not just the zombies, it's the zombies. They're not real. They're still out there. They're coming after me. They're going after me. I'm going to kill the fuck man and the minute he gets around, I'm going to kill him."
+
+One of the things didn't make such sense. It was crazy. There were an all- happening nightmare.
+
+The zombies were coming. They were biting more and more in their throats. They were hungry, hungry, like somebody had been standing in the road. They wanted revenge, then they were shot. I was going to die.
+
+"I don't see how they're coming, but they're in there, trying to kill me. They're going to attack me. They're faster than humans. They don't want to kill me. They need to put me in a safe way. They'll be lying down if they come. I'm going to kill them right now. The few of you guys are okay now, you have to be okay."
+
+"I'll be fine." I said, shaking my head in thought.
+
+"No, I'm very fine. Just wait until I get the hell out of there. I'll get you out of here."
+
+"Fine," I said through a mouthful of dirt. "We'll get to the car. Once we get there, we can meet the dead and they'll leave immediately."
+
+"I don't want to do this anymore," she said. "I just don't know what's going on."
+
+"But there's blood in my mouth! I'm going to kill you, you know that. It's not going to stop. I mean, it's not like the humans are going to die."
+
+"You're talking to me, and now you're in danger, you're not even going to kill me. You're just stronger than the others. Turn around and get away from me, and then never look back."
+
+
+
+
+20000	loss: 2.7
+When they atacked we were telling them about the bomb's true purpose we didn't even know who was that. We didn't have the foggiest clue what they were looking for, but we didn't have time for one. So we told them whether the bomb had been shot or not, then we should have done a good job of it.
+
+I was surprised that it wasn't caused by the hell I didn't know what to do. I heard a lot of shouting from up in the backyard. There were three yelling and yelling, but no sounds. I heard movement coming from the fence more and farther in. I heard it, and I think they were talking too.
+
+"Molly," I heard Rafe shout. "You're going to die!" I heard him at the top of the fence, but he didn't say anything. He just kept looking at me.
+
+"I don't think she's going to die," I said. I turned to Rafe. "She was going to be pissed, I'm just going to die if she's ever got the chance"
+
+I followed Rafe through the house. He was still in the house, and I was having a hard time focusing on him. I don't want to think about Rafe being angry here. He was just very angry about what he was accused of.
+
+"Rafe!" I yelled at him. "You have to be a vampire!"
+
+"Rafe!" Rafe shouted. "Rafe!"
+
+The rain had stopped.
+
+"It's Rafe!" I shouted. "I'm going to kill him! He's going to die!"
+
+"Rafe!" Rafe yelled. "You're not getting away! You blood is blood. You can't die! You'll die first." He scrambled over to him and. I saw him, and he was on his knees, his hands flat out over his chest.
+
+"Rafe!" I shouted. "Rafe, you!"
+
+Rafe rose up, but I saw him stumble into Rafe, and he fell forward. Rafe cried out. But I saw him fall, and he collapsed to the dirt. The impact knocked me off my feet. He slumped to the ground.
+
+"I'm sorry, Rafe," I said. "I'm so just going to kiss you on the head."
+
+
+
+
+30000	loss: 2.6
+When they atacked we were telling them about the bomb that they created? It was so big that they almost threw us in because it was so massive that we couldn't just fire them. That was the best way they could believing that. Even for Demietuz he had been able to do that trick.
+
+The men of Harshore were the first man on Harshore. They'd been able to tell what they were thinking, but I didn't want to think too. I wanted to see what was going on. I started to yell at them.
+
+"Momma said they weren't in the way of the earth," I said to them. "It was taken."
+
+"I can understand them."
+
+"Even the gods, the gods, are gods. There's no doubt they're gods," I said. "And the hell I'm not supposed to do, I don't think they're gods."
+
+They ignored me. I looked around. There were no signs of them. A war had gone around us. It couldn't be.
+
+"A new time, Grandma?" I said. "I don't think it's the end. The gods don't go around here, and I don't want to think of it."
+
+"So, I wasn't nearly as confident," said Azrael. I shook my head. "To the gods, they were always on the undead." I shrugged.
+
+"It's a long story," I said, "all of them and they don't always remember the events of the last few months." I tried to figure out what that was, but Azrael suddenly became afraid.
+
+"Is that why they're all living?" he said. I shook my head.
+
+"You say that," I said, and he laughed.
+
+"It's because of Descendantity, Grandma, but I think we're enough."
+
+"And what happened to the king?" he said.
+
+"Oh dear, you're a group of men. You're an idiot, and you don't need to put yourself on the line. If I had to fight that hard for you, you can do what you want." I hesitated, suddenly afraid of what to do. "Pregnant." I was right. I had no idea what I was going to do. My anger was what I was going to do.
+
+
+
+
+40000	loss: 2.5
+When they atacked we were okay. Every time I got up I was aiming at them.
+
+"Well, it looks like we managed to go back to the garage and get you a few things. Don't go in there and I haven't been able to get in yet."
+
+"You can't go in there, Shawn. I'll be around to pick you up."
+
+"I will, but I won't answer. Just run away."
+
+"Because you're not ready yet."
+
+"Listen, Shawn, around me and let you take care of me. If you don't and if you don't, I'll do it tomorrow."
+
+"That's it Shawn." Shawn gave a sign with a defiant smile on her face. "Listen, there is no other way. You need to feed and keep the place running open and tell me what to do. You know that. You will not walk away. If you do, I will do everything in my power to bring you here. I won't try anything."
+
+"You will take care of me, Shawn. You will kill me and I'll kill you myself." He was right and they were at the mercy of death and not even Shawn could give up the safety of their own lives. He knew if he did do he would be the jail would be out of the equation. He smiled to himself as he left the room and turned off the lights to go.
+
+For the moment, his thoughts turned to one of them and he would be in a fight. He was about to join up with them when the door burst into his office and just as he saw Shawn fully loaded locks in his dark blue jeans. He was shocked to see the looks on their faces, but could just about see a black hole through their locked doors. His heart began to pound rapidly in his chest.
+
+It was dark outside but he knew he had to get out of there. He rushed towards his father's car dropping out of the rain. He stood still as silent as a vampire. He didn't see the car anywhere, but he felt it. He was in a tiny graveyard, a three story building with a small three story window facing a black hole. A few seconds later he saw the car's engine coming towards him and he felt his heartbeat speed up. He moved slowly and put a hand over his chest to make sure it hid under his shirt. He exhaled and pushed the power up
+
+
+
+
+50000	loss: 2.4
+When they atacked we were okay. We did not have the strength to go home.
+
+The night passed. We looked for the doctor and he gave him a pocket phone number, then hung up. We left Mr. Phillips with the tracker.
+
+"Did you see the plane?" I asked Mr. Phillips and he shook his head.
+
+"No. Sch conditioning is at the airport, so it is in view."
+
+"Excuse me?" Mr. Phillips asked.
+
+"No," I said droll. It was practically impossible to be at this time of day. I had not been fed for a couple of days, but the stench of the sun was subsiding and the stale rubber of the entire journey gave way to human bath.
+
+"I don't really need to determine whether I can last long and take a look at the rack," Mr. Phillips said.
+
+"I'm better," I quipped.
+
+"I need to find my favorite librarian."
+
+"Then get this over with," I said. Mr. Phillips returned his attention to the back of the carriage and pulled the carriage up to the door like a grand citizen.
+
+As soon as we stepped inside, the carriage was destroyed, and we arrived at the back of the carriage with a crowd of the dead and the dead.
+
+"What happened to the luggage—?" said Mr. Phillips.
+
+"Oh dear young leaf den Raquel, and tell me all you need to know. You must wait for the coach to pull in before you get the stowed down to the carriage."
+
+"Of course, master. I am in full control, and I have received the horses before, and, uh, go in, and get a room."
+
+"Indeed, now we work in the cabin." Mr. Phillips broke off the passenger's seat and lowered his hood to allow him to cross the carriage. "The cabin is large enough. I'll tell you the proper accommodations, Miss Phillips, what do you think of that, Mr. Phillips?" Mr. Phillips asked.
+
+"Mr. Phillips is in a state of shock. Who knows? I can tell, Mr. Phillips. Perhaps I can explain it is a great surprise for him to be home in the carriage carriage so far from here and on that awful day," Mr. Phillips corrected me with a bow of his head.
+
+"Is Bron expel the
+
+
+
+
+60000	loss: 2.4
+When they atacked we were okay. No one seems to know what happened. I know I've seen my mum. They must have had some weird weird weird scary happen over there."
+
+"You're not going to let them have a problem?"
+
+"We can't be that bad. But then I think they're dead and I mean them not exactly living. I mean, they're humans, so it would really work out. So, if people were smart, could you mess around with their stuff?"
+
+"The government isn't smart and they're not smart enough to have that? You know, if you really don't like them, you can't take control of it. That's why you need to take control of people and stop making the decisions. You know that, don't you?"
+
+"Look, I'm not gonna do anything to break the news to you. I'm starting to panic my mind. I'm not going to stay. I'm not going to listen. I've never killed anyone, so I don't want to be in control. I just can't. And I've never hurt someone. I just can't."
+
+"Why not?" he asked. "You know, right? We don't care about what we do with each other and we don't even know what we did. But there's no way out. Everything is just going to be fine now, man. You don't have to keep your focus on. You're just being stupid, okay?"
+
+I reached down and grabbed the stranger's arm. It was cold, cold, like the day after breaking the skin. I could have been dead in them.
+
+I pushed him in the face. He was silent, not moving, but staring right in front of me. That had to make things better.
+
+"You can take care of yourself, I'm sure." I put my arm around him and squeezed, then gentlyoving him away from the door.
+
+I had to make him calm. I knew what I wanted. He didn't have to. I knew that he wanted to consider me alone, to relive this moment in the world.
+
+"I can help you find some... some... special food." I kissed him again. I'd changed him quickly so he could make a little more coffee.
+
+"Promise you will eat something." His voice was husky.
+
+"Promise me something."
+
+
+
+
+
+70000	loss: 2.4
+When they atacked we were okay. No one seems to know what happened to me. I think they're gone. They looked at me like they were going to run something in my life. They must have been trying to get me to go.
+
+"Where are we going?" I asked.
+
+"Behind the kitchen," Margrave Snick's voice was flat and lifeless.
+
+"I think it's safe," I suggested.
+
+"Why?"
+
+"I need to get refreshments for my 'scary thing' and go find my room," I pointed out. "You don't need to come to the kitchen for breakfast!"
+
+"I thought we were going to visit the kitchen this morning. You said you'd show me to the bathroom and I'll up the stairs."
+
+"Thanks." I took the paper and obediently papers and headed to the kitchen to change.
+
+I dressed and learned a half-hour shorts made up of prints as I watched my little brother's face. I waited until my friend's head jerked backward.
+
+"Sorry about this."
+
+"I just wanted to see you." He lowered his eyes and then he smiled. "Lance!"
+
+I ignored his comment.
+
+I went through the door and into the living room. I found Salem sitting there, talking to his wife, while he was trying to avoid the fact that I was too tired to care. I walked into the bathroom, and he sat across from me at the kitchen table, sipping the milk. "So this is your first time here?"
+
+He gave me a questioning look. "I need to talk to my mother."
+
+"What?"
+
+He didn't, only shrugged. "I just need to puke. I need to be able to finish the rest of your birthday before the sun comes up."
+
+"Can you believe that? You know, then?" My eyes burned.
+
+He blushed. "No."
+
+"What if I change you into a vampire, then take me to Janet and leave?" I was sure he wasn't talking to me as a piece of cake. I wasn't embarrassed by his protective medium, but since I didn't think it mattered.
+
+"After you two have changed, I figure...well, that's all you're frustrated about. This is not a breath I'm really," he whispered. "I'm more concerned
+
+
+
+
+
+90000	loss: 2.3
+When they atacked we were both dead and dead, they lost our work when we woke up."
+
+"What is it?" Alex asked.
+
+"They're dead."
+
+"The vampire, Alex? What things do they have that makes me a vampire?"
+
+"This vampire. He doesn't bite anyone. He sees that something peculiar has happened there. He seems to be drunk and speaking of vampires. He even has a list of vampires," Alex added.
+
+"I'm on the verge of what?" She wondered. "And what else can we do?"
+
+"If I'm your descendant, it would make sense to you. It might make sense to keep you out of this place." She replied. "You're right. I've had hundreds of vampire friends, vampires and vampires. But I've never been one. And I've never been too afraid of my undead existence. This is not the official fairly committed murder of a vampire, or the claim similar to being a vampire, which is what I came to call him."
+
+"I see," said Alex. "I've heard one."
+
+"Someone recently turned mortal again, Alex. Alex was a vampire, but she had gone to heaven. And that someone I knew even among would have told me the secret."
+
+Alex was quiet.
+
+"So you're more likely to have vampires living in heaven or Hell when you think I'm a vampire?" Alex asked.
+
+"I don't know," said Alex. "I heard the Russian vampire that got me and the man turned into a vampire. I didn't even think I had one, and that didn't really mean I'd gone to heaven. But then I saw a man I'd known for a while back."
+
+"But you knew what was going on here and then said something important."
+
+"How did you get to heaven before I killed them?" Alex asked.
+
+They both looked dazed. "I have those hundreds of centuries, Alex. Do you suppose you're a vampire? Do you have a bitten human in a crazy world?"
+
+"I've wondered a vampire who turned into a vampire, besides all of the other vampires in heaven and there're a ton of tales about Heaven," Alex said. "I've heard rumors that some vampires were turned against my old self, but I never saw a vampire in heaven."
+
+"You've never seen one?" the girl
+
+
+
+
+
+1000000	loss: 2.3
+When they atacked we were both suddenly distracted with a strange mix of assumptions and facts, we didn't see each other or anything else. I was so exhausted I couldn't even think.
+
+The men, the girls and women, all only eat from the rest of the battle, and I was startled when they came rushing down the corridor that I could see it clearly. They had the usual nasty gut off and they all ate it out of my head. I was pretty sure that they both were aware of my presence when I woke up; I could hear my feet leading up to me and then they caught me in the waist and pinned me to the floor. I didn't hear them though, they just couldn't hear my pacing.
+
+They were the ones that liked to walk around the building and when they reached the end of the corridor the sound of my own voice came to me. The cold air was still, but the sounds from the ground floor were a constant significance. It was difficult to see in the dark, but I never noticed in front of the cameras and a few feet were arms hanging tightly on to me. I was one of the guys but I felt sorry for them; the men I used to know but didn't care. They were about as much adults as I needed to know.
+
+I went to my bedroom but my room was empty. Pierce closed the door and I didn't know how I had run away. I opened the door and stepped into his room.
+
+I heard a noise. Truth be told, I got on my way to the bed and sat on my side facing it. I rolled over and looked up at Pierce.
+"What are you doing?" Pierce asked.
+
+"I didn't know you where for the phone or who use the phone," I answered.
+
+"I'm not supposed to be here."
+
+"You want to go to the hospital and tell me what you can't do about it?"
+
+"I want to be with you. You can tell me all the details."
+
+I sighed and thought about what I had said. "I'd have to call you soon if I could."
+
+"I know the doctor. You're a good man. Anything."
+
+"I know what you mean."
+
+"I've been dying."
+
+"I'm so scared I think I'm going to have to fall asleep."
+
+"You've never had a reaction. You
+
+
+
+
+1200000	loss: 2.3
+When they atacked we were in the wing and you were right about the last part. The sun was setting and pink in the sky. I thought the king and queen would be able to find her, but you should have none of that happen. I felt a rush of anger from myself and for what seemed like a good omen. I knew I was going mad, but I wouldn't let that happen. I bit my lip and tried to start my unpacked speech with a plan. "Nothing, we've all been involved in the war. We have to be proven murderers." I didn't know, but I felt sick as they were.
+
+"It's what two of us are up to? What's going to happen if we can't take any chances. We're going to have to stay on the same track for about as much time as possible."
+
+That was the point. But it wasn't going to be easy. We were starting to get stuck up in my cell. I wanted to know what was going on and what it was about.
+
+"So what you've been doing is a good ten year old."
+
+"I don't know. I'm not really into the idea. What is it I've been losing?"
+
+"You don't know that." It was I. I just wanted to know the truth. I owed him as a baby brother. I was still a virgin in hell.
+
+"I tried to call you, but the weird ringing rang out in my ears. I'm not one of you old boys." The front door was locked. There was no way in how it would make me want to go to hell. I had to get to the door before either of them was home. I didn't want to leave and ask Emma right out.
+
+"What are you doing here?" I asked. I knew when that voice would answer questions, so I had to ask. I didn't want to go.
+
+"You should be busy, but you promised Emma that you would come to the hospital."
+
+"I promised Emma that I could go. I told her I don't believe this rumor. It doesn't have to do with whether I can stop the monsters."
+
+"You don't have to worry about it. You'll get anywhere. Where will you get hurt?"
+
+"We'll tell anyone. When I helped, I helped her and found her, but I found her.
+
+
