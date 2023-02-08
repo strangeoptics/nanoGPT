@@ -39,12 +39,12 @@ if real_data:
         ix = torch.randint(len(data) - block_size, (batch_size,))
         x = torch.stack([torch.from_numpy((data[i:i+block_size]).astype(np.int64)) for i in ix])
         y = torch.stack([torch.from_numpy((data[i+1:i+1+block_size]).astype(np.int64)) for i in ix])
-        x, y = x.to(device), y.to(device)
+        x, y = x.pin_memory().to(device, non_blocking=True), y.pin_memory().to(device, non_blocking=True)
         return x, y
 else:
     # alternatively, if fixed data is desired to not care about data loading
-    x = torch.randint(50257, (batch_size, block_size), device=device)
-    y = torch.randint(50257, (batch_size, block_size), device=device)
+    x = torch.randint(50304, (batch_size, block_size), device=device)
+    y = torch.randint(50304, (batch_size, block_size), device=device)
     get_batch = lambda split: (x, y)
 
 # model init
@@ -57,7 +57,7 @@ gptconf = GPTConfig(
 model = GPT(gptconf)
 model.to(device)
 
-optimizer = model.configure_optimizers(weight_decay=1e-2, learning_rate=1e-4, betas=(0.9, 0.95))
+optimizer = model.configure_optimizers(weight_decay=1e-2, learning_rate=1e-4, betas=(0.9, 0.95), device_type=device_type)
 
 if compile:
     print("Compiling model...")
@@ -76,14 +76,15 @@ if profile:
         record_shapes=False,
         profile_memory=False,
         with_stack=False, # incurs an additional overhead, disable if not needed
-        with_flops=False,
+        with_flops=True,
         with_modules=False, # only for torchscript models atm
     ) as prof:
 
+        X, Y = get_batch('train')
         for k in range(num_steps):
-            X, Y = get_batch('train')
             with ctx:
                 logits, loss = model(X, Y)
+            X, Y = get_batch('train')
             optimizer.zero_grad(set_to_none=True)
             loss.backward()
             optimizer.step()
@@ -98,10 +99,11 @@ else:
     torch.cuda.synchronize()
     for stage, num_steps in enumerate([10, 20]): # burnin, then benchmark
         t0 = time.time()
+        X, Y = get_batch('train')
         for k in range(num_steps):
-            X, Y = get_batch('train')
             with ctx:
                 logits, loss = model(X, Y)
+            X, Y = get_batch('train')
             optimizer.zero_grad(set_to_none=True)
             loss.backward()
             optimizer.step()
@@ -109,5 +111,7 @@ else:
             print(f"{k}/{num_steps} loss: {lossf:.4f}")
         torch.cuda.synchronize()
         t1 = time.time()
+        dt = t1-t0
+        mfu = model.estimate_mfu(batch_size * 1 * num_steps, dt)
         if stage == 1:
-            print(f"time per iteration: {(t1-t0)/num_steps*1000:.4f}ms")
+            print(f"time per iteration: {dt/num_steps*1000:.4f}ms, MFU: {mfu*100:.2f}%")

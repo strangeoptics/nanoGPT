@@ -115,7 +115,7 @@ class Block(nn.Module):
 @dataclass
 class GPTConfig:
     block_size: int = 1024
-    vocab_size: int = 50257
+    vocab_size: int = 50304 # GPT-2 vocab_size of 50257, padded up to nearest multiple of 64 for efficiency
     n_layer: int = 12
     n_head: int = 12
     n_embd: int = 768
@@ -152,8 +152,19 @@ class GPT(nn.Module):
                 torch.nn.init.normal_(p, mean=0.0, std=0.02/math.sqrt(2 * config.n_layer))
 
         # report number of parameters
+        print("number of parameters: %.2fM" % (self.get_num_params()/1e6,))
+
+    def get_num_params(self, non_embedding=True):
+        """
+        Return the number of parameters in the model.
+        For non-embedding count (default), the position embeddings get subtracted.
+        The token embeddings would too, except due to the parameter sharing these
+        params are actually used as weights in the final layer, so we include them.
+        """
         n_params = sum(p.numel() for p in self.parameters())
-        print("number of parameters: %.2fM" % (n_params/1e6,))
+        if non_embedding:
+            n_params -= self.transformer.wpe.weight.numel()
+        return n_params
 
     def _init_weights(self, module):
         if isinstance(module, nn.Linear):
@@ -162,10 +173,6 @@ class GPT(nn.Module):
                 torch.nn.init.zeros_(module.bias)
         elif isinstance(module, nn.Embedding):
             torch.nn.init.normal_(module.weight, mean=0.0, std=0.02)
-        elif isinstance(module, (LayerNorm, nn.LayerNorm)):
-            torch.nn.init.ones_(module.weight)
-            if module.bias is not None:
-                torch.nn.init.zeros_(module.bias)
 
     def forward(self, idx, targets=None):
         device = idx.device
@@ -218,15 +225,16 @@ class GPT(nn.Module):
             'gpt2-large':   dict(n_layer=36, n_head=20, n_embd=1280), # 774M params
             'gpt2-xl':      dict(n_layer=48, n_head=25, n_embd=1600), # 1558M params
         }[model_type]
-        # we can override the dropout rate
+        print("forcing vocab_size=50257, block_size=1024, bias=True")
+        config_args['vocab_size'] = 50257 # always 50257 for GPT model checkpoints
+        config_args['block_size'] = 1024 # always 1024 for GPT model checkpoints
+        config_args['bias'] = True # always True for GPT model checkpoints
+        # we can override the dropout rate, if desired
         if 'dropout' in override_args:
+            print(f"overriding dropout rate to {override_args['dropout']}")
             config_args['dropout'] = override_args['dropout']
-        # block_size is always 1024 for GPT model checkpoints
-        # if one wants a lower block_size it has to be done through model surgery
-        # later, by calling crop_block_size()
-
         # create a from-scratch initialized minGPT model
-        config = GPTConfig(block_size=1024, bias=True, **config_args) # note: force bias=True, as in gpt2 models
+        config = GPTConfig(**config_args)
         model = GPT(config)
         sd = model.state_dict()
         sd_keys = sd.keys()
@@ -258,7 +266,7 @@ class GPT(nn.Module):
 
         return model
 
-    def configure_optimizers(self, weight_decay, learning_rate, betas):
+    def configure_optimizers(self, weight_decay, learning_rate, betas, device_type):
         """
         This long function is unfortunately doing something very simple and is being very defensive:
         We are separating out all parameters of the model into two buckets: those that will experience
@@ -309,10 +317,28 @@ class GPT(nn.Module):
             {"params": [param_dict[pn] for pn in sorted(list(no_decay))], "weight_decay": 0.0},
         ]
         # new PyTorch nightly has a new 'fused' option for AdamW that is much faster
-        extra_args = dict(fused=True) if 'fused' in inspect.signature(torch.optim.AdamW).parameters else dict()
+        use_fused = (device_type == 'cuda') and ('fused' in inspect.signature(torch.optim.AdamW).parameters)
+        print(f"using fused AdamW: {use_fused}")
+        extra_args = dict(fused=True) if use_fused else dict()
         optimizer = torch.optim.AdamW(optim_groups, lr=learning_rate, betas=betas, **extra_args)
 
         return optimizer
+
+    def estimate_mfu(self, fwdbwd_per_iter, dt):
+        """ estimate model flops utilization (MFU) in units of A100 bfloat16 peak FLOPS """
+        # first estimate the number of flops we do per iteration.
+        # see PaLM paper Appendix B as ref: https://arxiv.org/abs/2204.02311
+        N = self.get_num_params()
+        cfg = self.config
+        L, H, Q, T = cfg.n_layer, cfg.n_head, cfg.n_embd//cfg.n_head, cfg.block_size
+        flops_per_token = 6*N + 12*L*H*Q*T
+        flops_per_fwdbwd = flops_per_token * T
+        flops_per_iter = flops_per_fwdbwd * fwdbwd_per_iter
+        # express our flops throughput as ratio of A100 bfloat16 peak flops
+        flops_achieved = flops_per_iter * (1.0/dt) # per second
+        flops_promised = 312e12 # A100 GPU bfloat16 peak flops is 312 TFLOPS
+        mfu = flops_achieved / flops_promised
+        return mfu
 
     @torch.no_grad()
     def generate(self, idx, max_new_tokens, temperature=1.0, top_k=None):
